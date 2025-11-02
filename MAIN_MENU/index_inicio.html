@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lirio Games</title>
+  <link rel="stylesheet" href="style_inicio.css" />
+</head>
+<body>
+
+  <!-- ==================== NAVEGACIÓN ==================== -->
+  <header>
+    <h2 class="logo">Lirio Games</h2>
+
+    <!-- ======== BOTÓN MENÚ RESPONSIVO (no funcional sin JS, pero se mantiene) ======== -->
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">
+      <img src="menu.png" alt="Menú">
+    </label>
+
+    <!-- ======== MENÚ DE NAVEGACIÓN ======== -->
+    <nav class="navigation">
+      <a href="#">PC</a>
+      <a href="#">PlayStation</a>
+      <a href="#">Nintendo</a>
+      <button class="btnLogin-popup"><a href="../INCIO_LOGIN/INICIO_SESION.html">LOGIN</a></button>
+    </nav>
+  </header>
+
+  <!-- ==================== MÚSICA ==================== -->
+  <section class="musica">
+  <audio id="musica" loop>
+    <source src="Music_1.mp3" type="audio/mpeg">
+    Tu navegador no soporta audio.
+  </audio>
+
+  <button id="btnMusica">Reproducir música</button>
+</section>
+
+<script>
+  const musica = document.getElementById("musica");
+  const btn = document.getElementById("btnMusica");
+
+  btn.addEventListener("click", () => {
+    if (musica.paused) {
+      musica.play();
+      btn.textContent = "Pausar música";
+    } else {
+      musica.pause();
+      btn.textContent = "Reproducir música";
+    }
+  });
+</script>
+
+
+  <!-- ==================== CARRUSEL PRINCIPAL ==================== -->
+  <div class="carrusel">
+    <ul>
+      <li><img src="IMG_PRINCIPAL/IMG_1.png" alt="Carrusel 1"></li>
+      <li><img src="IMG_PRINCIPAL/IMG_2.jpg" alt="Carrusel 2"></li>
+      <li><img src="IMG_PRINCIPAL/IMG_3.jpg" alt="Carrusel 3"></li>
+      <li><img src="IMG_PRINCIPAL/angel-warrior-anime-girl-sword-8k-wallpaper-uhdpaper.com-731@3@a.jpg" alt="Carrusel 4"></li>
+      <li><img src="IMG_CARRUSEL/angel-warrior-anime-girl-sword-8k-wallpaper-uhdpaper.com-731@3@a.jpg" alt="Carrusel 5"></li>
+      <li><img src="IMG_CARRUSEL/1366760.jpg" alt="Carrusel 6"></li>
+    </ul>
+  </div>
+
+  <!-- ==================== SECCIONES DE PLATAFORMAS ==================== -->
+  <section class="plataformas">
+    <div class="card pc">
+      <h2><a href="#">PC</a></h2>
+    </div>
+    <div class="card ps">
+      <h2><a href="#">PlayStation</a></h2>
+    </div>
+    <div class="card nintendo">
+      <h2><a href="#">Nintendo</a></h2>
+    </div>
+  </section>
+
+  <!-- ==================== CARRUSEL PEQUEÑO ==================== -->
+  <section class="recomendados">
+    <div class="mini-carrusel">
+      <img src="IMG_SECUNDARIO/IM_1.jpg" alt="Recomendado 1">
+      <img src="IMG_SECUNDARIO/IM_2.jpg" alt="Recomendado 2">
+      <img src="IMG_SECUNDARIO/IM_4.jpg" alt="Recomendado 4">
+      <img src="IMG_SECUNDARIO/IM_5.jpg" alt="Recomendado 5">
+    </div>
+  </section>
+
+  <!-- ==================== PIE DE PÁGINA ==================== -->
+  <footer>
+    <p>© 2025 Lirio Games | Todos los derechos reservados |</p>
+    <p>Integrantes</p>
+    <div class="Integrantes">|
+      <a href="#">GABRIEL ANGEL POROMA GOMEZ</a> | <a href="#">JULIO CESAR BLANCO HUANACO</a> | <a href="#">CRISTIAN CHAMBI PAREDES</a>| <a href="#">IVAN CHOQUE ROQUE</a>
+    </div>
+  </footer>
+
+</body>
+</html>
