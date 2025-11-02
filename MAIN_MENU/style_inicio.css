@@ -37,17 +37,17 @@ header {
     color: var(--color-acento);
 }
 
-.navigation a {
+.navigation .a1 {
     position: relative;
     font-size: 1.1em;
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     font-weight: 500;
     margin-left: 40px;
 }
 
 /* ======== SUBRAYADO AL PASAR ======== */
-.navigation a::after {
+.navigation .a1::after {
     content: "";
     position: absolute;
     left: 0;
@@ -71,16 +71,38 @@ header {
     border: 2px solid white;
     background: transparent;
     border-radius: 6px;
-    color: #fff;
+    color: #000000;
     cursor: pointer;
     transition: 0.5s;
     font-size: 20px;
 }
 
 .navigation .btnLogin-popup:hover {
-    background: #fff;
+    background: transparent;
     color: #162938;
 }
+.navigation .btnLogin-popup.LOGIN:hover {
+    background: #fff;
+    color: #000000;
+}
+
+.navigation a{
+    color: white;
+    text-decoration: none;
+}
+.navigation #LOGIN{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+.navigation #LOGIN:hover{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    background: #ffffffe0;
+    padding: 13px 33px 13px 33px;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
 
 /* ==================== MÚSICA ==================== */
 .musica {
