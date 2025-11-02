@@ -297,11 +297,12 @@ header{
     font-size: 20px;
     padding: 10px 0;
     margin-left: 0;
+    margin-bottom: 10px;
   }
 
   .navigation .btnLogin-popup {
     width: 100px;
-    margin: 20px;
+    margin: 30px;
   }
 
   #menu-toggle:checked ~ .navigation {
