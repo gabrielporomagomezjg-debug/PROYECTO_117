@@ -1,0 +1,400 @@
+/* ========================================================= */
+/* ====================== VARIABLES GLOBALES =============== */
+/* ========================================================= */
+:root {
+  --color-fondo: #0f1724;
+  --color-texto: #ffffff;
+  --color-acento: #c24c4c;
+  --color-transparente: rgba(255, 255, 255, 0.2);
+  --color-fondo-card: rgba(0, 0, 0, 0.6);
+}
+
+/* ========================================================= */
+/* ====================== RESETEO GENERAL ================== */
+/* ========================================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-fondo);
+  font-family: system-ui, sans-serif;
+  color: var(--color-texto);
+}
+
+
+/* ========================================================= */
+/* ======================= CARRUSEL ========================= */
+/* ========================================================= */
+.carrusel {
+  width: 100%;
+  overflow: hidden;
+  height: 40vh;
+  position: relative;
+}
+
+.carrusel ul {
+  display: flex;
+  width: 600%;
+  height: 100%;
+  animation: slide 25s infinite alternate ease-in-out;
+}
+
+.carrusel li {
+  list-style: none;
+  width: 100%;
+}
+
+.carrusel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ======== ANIMACIÓN DE CARRUSEL ======== */
+@keyframes slide {
+  0%, 20% { margin-left: 0; }
+  25%, 45% { margin-left: -100%; }
+  50%, 70% { margin-left: -200%; }
+  75%, 100% { margin-left: -300%; }
+}
+
+
+/* ========================================================= */
+/* ==================== TÍTULO DE SECCIÓN =================== */
+/* ========================================================= */
+.titulo-seccion {
+  text-align: center;
+  color: var(--color-acento);
+  font-size: 2rem;
+  margin: 2rem 0 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+
+/* ========================================================= */
+/* ==================== LISTA DE JUEGOS ===================== */
+/* ========================================================= */
+.lista-juegos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 20px;
+  padding: 0 2rem 2rem 2rem;
+}
+
+.tarjeta-juego {
+  background: var(--color-fondo-card);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid var(--color-transparente);
+}
+
+.tarjeta-juego:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--color-acento);
+}
+
+.tarjeta-juego img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+}
+
+.info-juego {
+  padding: 1rem;
+  text-align: center;
+}
+
+.info-juego h2 {
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.boton-info {
+  background: var(--color-acento);
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.boton-info:hover {
+  background: #ff5a5a;
+}
+
+
+/* ========================================================= */
+/* ====================== ENCABEZADO ======================== */
+/* ========================================================= */
+header {
+  width: 100%;
+  padding: 20px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2em;
+  color: #fff;
+}
+
+.navigation .a1 {
+  position: relative;
+  font-size: 1.1em;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 40px;
+}
+
+/* ======== SUBRAYADO AL PASAR ======== */
+.navigation .a1::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 3px;
+  background: #fff;
+  transform: scaleX(0);
+  transition: transform 0.5s;
+}
+
+.navigation .a1:hover::after {
+  transform: scaleX(1);
+}
+
+.navigation .btnLogin-popup {
+  width: 130px;
+  height: 50px;
+  margin-left: 20px;
+  border: 2px solid white;
+  background: transparent;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.5s;
+  font-size: 20px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.navigation .btnLogin-popup:hover {
+  background: #fff;
+  color: #162938;
+}
+
+.navigation #LOGIN{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navigation #LOGIN:hover{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+/* ======== MENÚ RESPONSIVO ======== */
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-icon img {
+  width: 30px;
+  height: auto;
+}
+
+
+/* ========================================================= */
+/* ===================== RESPONSIVE HEADER ================= */
+/* ========================================================= */
+@media (max-width: 900px) {
+  .menu-icon {
+    display: block;
+    z-index: 1001;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .navigation {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 82px;
+    right: 0;
+    background: var(--color-fondo);
+    border-radius: 0 0 0 10px;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    align-items: center;
+    gap: 15px;
+    z-index: 999;
+    width: 200px;
+    border-left: 1px solid white;
+    border-bottom: 1px solid white;
+  }
+
+  .navigation .a1 {
+    font-size: 20px;
+    padding: 10px 0;
+    margin-left: 0;
+  }
+
+  .navigation .btnLogin-popup {
+    width: 100px;
+    margin: 20px;
+    text-align: center;
+  }
+
+  #menu-toggle:checked ~ .navigation {
+    max-height: 500px;
+    opacity: 1;
+  }
+}
+
+
+/* ========================================================= */
+/* ========================= FOOTER ========================= */
+/* ========================================================= */
+.footer {
+  background-color: var(--color-fondo);
+  padding: 70px 0 30px;
+  color: #ffffff;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-links {
+  flex: 1 1 220px;
+  margin: 20px;
+}
+
+.footer-links h4 {
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-size: 15px;
+  color: var(--color-acento);
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--color-acento);
+}
+
+/* ======== FORMULARIO DE SUSCRIPCIÓN ======== */
+.input-send {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.input-send input {
+  padding: 12px 15px;
+  background-color: #222;
+  color: #fff;
+  border-radius: 20px 0 0 20px;
+  border: none;
+  width: 200px;
+}
+
+.input-send button {
+  padding: 12px 15px;
+  background-color: var(--color-acento);
+  border: none;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 0 20px 20px 0;
+  cursor: pointer;
+}
+
+.input-send button:hover {
+  background-color: #fffcf7;
+}
+
+/* ======== REDES SOCIALES ======== */
+.social-link {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.social-link a {
+  color: #ffffff;
+  font-size: 18px;
+  transition: transform 0.3s, color 0.3s;
+}
+
+.social-link a:hover {
+  transform: scale(1.2);
+  color: var(--color-acento);
+}
+
+/* ========================================================= */
+/* ==================== RESPONSIVE GENERAL ================= */
+/* ========================================================= */
+@media (max-width: 600px) {
+  .carrusel {
+    height: 25vh;
+  }
+
+  .titulo-seccion {
+    font-size: 1.5rem;
+  }
+
+  .lista-juegos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding: 0 1rem 2rem 1rem;
+  }
+
+  .tarjeta-juego img {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .input-send {
+    flex-direction: column;
+    gap: 10px;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .input-send input,
+  .input-send button {
+    width: 100%;
+    border-radius: 20px;
+  }
+}
