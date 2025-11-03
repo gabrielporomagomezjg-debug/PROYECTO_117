@@ -2,6 +2,7 @@
   --color-cuerpo: #121926;
   --color-fondo: #0b1220;
   --color-acento: #c24c4c;
+  --color-nose: #E60012;
 }
 
 * {
@@ -47,7 +48,7 @@ header {
   margin-left: 40px;
 }
 
-.navigation a::after {
+.navigation .a1::after {
   content: "";
   position: absolute;
   left: 0;
@@ -61,7 +62,7 @@ header {
   transition: transform 0.5s;
 }
 
-.navigation a:hover:after {
+.navigation .a1:hover:after {
   transform-origin: left;
   transform: scaleX(1);
 }
@@ -85,13 +86,20 @@ header {
   background: #fff;
   color: #162938;
 }
+.navigation #LOGIN{
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 10px;
+}
 
+.navigation #LOGIN:hover{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
 /* ----------------------------- */
 /* CONTENIDO PRINCIPAL */
 /* ----------------------------- */
 .main-todo {
-  background: url(IMG_INFO_GAME/wallpapersden.com_k-silent-hill-f-gaming_3840x2160.jpg)
-    center/cover no-repeat fixed;
   border-radius: 20px 20px 0 0;
   max-width: 1100px;
   margin: 0 auto;
@@ -371,7 +379,7 @@ td {
     gap: 10px;
   }
 
-  .navigation a,
+  .navigation .a1,
   .navigation .btnLogin-popup {
     margin-left: 0;
   }
@@ -489,7 +497,7 @@ td {
     font-size: 20px;
   }
 
-  .navigation a,
+  .navigation .a1,
   .navigation .btnLogin-popup {
     font-size: 14px;
   }
@@ -539,10 +547,8 @@ td {
 
 
 
-/* =============================== */
-/* MENÚ HAMBURGUESA */
-/* =============================== */
 
+/* ======== MENÚ RESPONSIVO ======== */
 #menu-toggle {
     display: none;
 }
@@ -556,16 +562,24 @@ td {
     width: 30px;
     height: auto;
 }
+
+
+/* ========================================================= */
+/* ===================== RESPONSIVE HEADER ================= */
+/* ========================================================= */
 @media (max-width: 900px) {
     .menu-icon {
         display: block;
+        z-index: 1001;
+        cursor: pointer;
+        position: relative;
     }
 
     .navigation {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 67px; /* ajusta según header */
+        top: 67px;
         right: 0;
         background: var(--color-fondo);
         border-radius: 0 0 0 10px;
@@ -573,26 +587,42 @@ td {
         overflow: hidden;
         opacity: 0;
         transition: all 0.5s ease-in-out;
+        align-items: center;
+        gap: 15px;
         z-index: 999;
-        padding: 20px 40px;
-        align-items: center; /* centra links horizontal */
-        gap: 15px; /* separación consistente */
+        width: 200px;
+        border-left: 1px solid white;
+        border-bottom: 1px solid white;
     }
-
-    .navigation a {
+    /* LOS A1 */
+    .navigation .a1 {
         font-size: 20px;
         padding: 10px 0;
-        text-align: center;
-        margin-left: 0; /* se controla con gap */
+        margin-left: 0;
     }
-
     .navigation .btnLogin-popup {
-        width: 100%;
-        margin: 0; /* solo gap lo separa */
+        width: 130px;
+        margin: 20px;
+        text-align: center;
     }
 
-    #menu-toggle:checked ~ .navigation {
+    #menu-toggle:checked~.navigation {
         max-height: 500px;
         opacity: 1;
     }
 }
+
+
+
+/* ------------------------------ */
+/* LOGO */
+.logo_1{
+    display: flex;
+    align-items: center;
+}
+.logo_1 .img_logo{
+    width: 50px;
+    margin-right: 10px;
+    border-radius: 50px;
+}
+/* ---------------------------- */
