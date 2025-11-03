@@ -99,7 +99,7 @@ header {
 /* CONTENIDO PRINCIPAL */
 /* ----------------------------- */
 .main-todo {
-  background: url(IMG_INFO_GAME/fondo.jpg)
+  background: url(IMG_INFO_GAME/fondo.webp)
     center/cover no-repeat fixed;
   border-radius: 20px 20px 0 0;
   max-width: 1100px;
