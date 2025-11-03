@@ -4,7 +4,18 @@
   --color-acento: #c24c4c;
   --color-nose: #E60012;
 }
-
+/* ------------------------------ */
+/* LOGO */
+.logo_1{
+    display: flex;
+    align-items: center;
+}
+.logo_1 .img_logo{
+    width: 50px;
+    margin-right: 10px;
+    border-radius: 50px;
+}
+/* ---------------------------- */
 * {
   box-sizing: border-box;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
@@ -602,7 +613,7 @@ td {
         margin-left: 0;
     }
     .navigation .btnLogin-popup {
-        width: 100px;
+        width: 140px;
         margin: 20px;
         text-align: center;
     }

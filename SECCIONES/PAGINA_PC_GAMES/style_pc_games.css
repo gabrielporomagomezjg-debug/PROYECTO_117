@@ -254,7 +254,7 @@ header {
   }
 
   .navigation .btnLogin-popup {
-    width: 100px;
+    width: 140px;
     margin: 20px;
     text-align: center;
   }
@@ -398,3 +398,18 @@ header {
     border-radius: 20px;
   }
 }
+
+
+
+/* ------------------------------ */
+/* LOGO */
+.logo_1{
+    display: flex;
+    align-items: center;
+}
+.logo_1 .img_logo{
+    width: 50px;
+    margin-right: 10px;
+    border-radius: 50px;
+}
+/* ---------------------------- */
